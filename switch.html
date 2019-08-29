@@ -1,0 +1,428 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+  <meta charset="UTF-8">
+
+  <title>light switch </title>
+
+  <style>
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,em,img,ins,kbd,q,s,samp,small,strike,strong,sub,sup,tt,var,b,u,i,centre,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{margin:0;padding:0;border:0;font-size:100%;font:inherit;vertical-align:baseline}article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}body{line-height:1}ol,ul{list-style:none}blockquote,q{quotes:none}blockquote:before,blockquote:after,q:before,q:after{content:'';content:none}table{border-collapse:collapse;border-spacing:0}
+
+</style>
+
+    <style>
+@import url(http://fonts.googleapis.com/css?family=Source+Sans+Pro);
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #edece7;
+}
+table, th, td {
+    border: 1px solid black;
+    padding: 5px;
+}
+table {
+    border-spacing: 15px;
+}
+
+.switch1 {
+  display: block;
+  position: relative;
+  width: 70px;
+  height: 100px;
+  margin: 70px auto;
+  border-radius: 50px;
+  background: #e6e3da;
+  background: linear-gradient(#e6e3da, #ffffff);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: ft 0 7px 0 #fdfdfd, 0 2px 3px rgba(170, 160, 140, 0.3);
+  cursor: pointer;
+}
+.switch2 {
+  display: block;
+  position: relative;
+  width: 70px;
+  height: 100px;
+  margin: 70px auto;
+  border-radius: 50px;
+  background: #e6e3da;
+  background: linear-gradient(#e6e3da, #ffffff);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 7px 0 #fdfdfd, 0 2px 3px rgba(170, 160, 140, 0.3);
+  cursor: pointer;
+}
+
+
+.switch1:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  bottom: -10px;
+  left: -5px;
+  right: -5px;
+  z-index: -1;
+  background: #f2f1ed;
+  border-radius: inherit;
+  box-shadow: 0 1px 1px rgba(174, 163, 145, 0.2), 0 3px 3px rgba(170, 160, 140, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 0 5px rgba(170, 160, 140, 0.5);
+}
+.switch2:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  bottom: -10px;
+  left: -5px;
+  right: -5px;
+  z-index: -1;
+  background: #f2f1ed;
+  border-radius: inherit;
+  box-shadow: 0 1px 1px rgba(174, 163, 145, 0.2), 0 3px 3px rgba(170, 160, 140, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 0 5px rgba(170, 160, 140, 0.5);
+}
+
+
+.switch1:after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 70px;
+  border-radius: 50%;
+  z-index: -1;
+  left: 18px;
+  top: 10px;
+  background: linear-gradient(160deg, rgba(170, 160, 140, 0.7), rgba(170, 160, 140, 0));
+  background: -webkit-linear-gradient(290deg, rgba(170, 160, 140, 0.75), rgba(170, 160, 140, 0));
+  -webkit-filter: blur(1px);
+}
+.switch2:after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 70px;
+  border-radius: 50%;
+  z-index: -1;
+  left: 18px;
+  top: 10px;
+  background: linear-gradient(160deg, rgba(170, 160, 140, 0.7), rgba(170, 160, 140, 0));
+  background: -webkit-linear-gradient(290deg, rgba(170, 160, 140, 0.75), rgba(170, 160, 140, 0));
+  -webkit-filter: blur(1px);
+}
+.switch3 {
+  display: block;
+  position: relative;
+  width: 70px;
+  height: 100px;
+  margin: 70px auto;
+  border-radius: 50px;
+  background: #e6e3da;
+  background: linear-gradient(#e6e3da, #ffffff);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 7px 0 #fdfdfd, 0 2px 3px rgba(170, 160, 140, 0.3);
+  cursor: pointer;
+}
+
+.switch3:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  bottom: -10px;
+  left: -5px;
+  right: -5px;
+  z-index: -1;
+  background: #f2f1ed;
+  border-radius: inherit;
+  box-shadow: 0 1px 1px rgba(174, 163, 145, 0.2), 0 3px 3px rgba(170, 160, 140, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 0 5px rgba(170, 160, 140, 0.5);
+}
+
+.switch3:after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 70px;
+  border-radius: 50%;
+  z-index: -1;
+  left: 18px;
+  top: 10px;
+  background: linear-gradient(160deg, rgba(170, 160, 140, 0.7), rgba(170, 160, 140, 0));
+  background: -webkit-linear-gradient(290deg, rgba(170, 160, 140, 0.75), rgba(170, 160, 140, 0));
+  -webkit-filter: blur(1px);
+}
+
+/*
+.switch3 span {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.switch3 span:after,
+.switch3 span:before {
+  content: "";
+  position: absolute;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: rgba(170, 160, 140, 0.3);
+  font-size: 20px;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 -1px 0 rgba(0,0,0,0.1); 
+}
+.switch3 span:before {
+  content: "I"; 
+  top: -40px;
+  left: 47%;
+}
+
+.switch3 span:after {
+  content: "O"; 
+  bottom: -40px;
+  left: 43%;
+}
+*/
+.switch4 {
+  display: block;
+  position: relative;
+  width: 70px;
+  height: 100px;
+  margin: 70px auto;
+  border-radius: 50px;
+  background: #e6e3da;
+  background: linear-gradient(#e6e3da, #ffffff);
+  border: 1px solid rgba(0, 0, 0, 0.1);
+  box-shadow: inset 0 7px 0 #fdfdfd, 0 2px 3px rgba(170, 160, 140, 0.3);
+  cursor: pointer;
+}
+
+.switch4:before {
+  content: "";
+  position: absolute;
+  top: -10px;
+  bottom: -10px;
+  left: -5px;
+  right: -5px;
+  z-index: -1;
+  background: #f2f1ed;
+  border-radius: inherit;
+  box-shadow: 0 1px 1px rgba(174, 163, 145, 0.2), 0 3px 3px rgba(170, 160, 140, 0.4), inset 0 1px 0 rgba(255, 255, 255, 0.8), 0 0 5px rgba(170, 160, 140, 0.5);
+}
+
+.switch4:after {
+  content: "";
+  position: absolute;
+  width: 60px;
+  height: 70px;
+  border-radius: 50%;
+  z-index: -1;
+  left: 18px;
+  top: 10px;
+  background: linear-gradient(160deg, rgba(170, 160, 140, 0.7), rgba(170, 160, 140, 0));
+  background: -webkit-linear-gradient(290deg, rgba(170, 160, 140, 0.75), rgba(170, 160, 140, 0));
+  -webkit-filter: blur(1px);
+}
+
+/*
+.switch4 span {
+  display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.switch4 span:after,
+.switch4 span:before {
+  content: "";
+  position: absolute;
+  font-family: 'Source Sans Pro', sans-serif;
+  color: rgba(170, 160, 140, 0.3);
+  font-size: 20px;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 -1px 0 rgba(0,0,0,0.1); 
+}
+.switch4 span:before {
+  content: "I"; 
+  top: -40px;
+  left: 47%;
+}
+
+.switch4 span:after {
+  content: "O"; 
+  bottom: -40px;
+  left: 43%;
+}
+*/
+#switch4 {
+  clip: rect(0 0 0 0);
+  position: absolute;
+  visibility: hidden;
+}
+
+#switch4:checked ~ .switch4 {
+  background: linear-gradient(#f7f6f4, #ffffff);
+  box-shadow: inset 0 -5px 0 #dbd3c8, 0 6px 5px rgba(170, 160, 140, 0.75), 3px 16px 5px rgba(170, 160, 140, 0.3);
+  border-bottom: none;
+}
+
+#switch4:checked ~ .switch4:after {
+  display: none;
+}
+#switch3 {
+  clip: rect(0 0 0 0);
+  position: absolute;
+  visibility: hidden;
+}
+
+#switch3:checked ~ .switch3 {
+  background: linear-gradient(#f7f6f4, #ffffff);
+  box-shadow: inset 0 -5px 0 #dbd3c8, 0 6px 5px rgba(170, 160, 140, 0.75), 3px 16px 5px rgba(170, 160, 140, 0.3);
+  border-bottom: none;
+}
+
+#switch3:checked ~ .switch3:after {
+  display: none;
+}
+
+/*
+.switch1 span {
+ 	display: block;
+  width: 100%;
+  height: 100%;
+}
+
+.switch1 span:after,
+.switch1 span:before {
+ 	content: "";
+  position: absolute;
+  font-family: 'Source Sans Pro', sans-serif;
+	color: rgba(170, 160, 140, 0.3);
+  font-size: 20px;
+  text-shadow: 0 1px 0 rgba(255,255,255,0.6), 0 -1px 0 rgba(0,0,0,0.1); 
+}
+.switch1 span:before {
+ 	content: "I"; 
+  top: -40px;
+  left: 47%;
+}
+
+.switch1 span:after {
+ 	content: "O"; 
+  bottom: -40px;
+  left: 43%;
+}
+*/
+#switch1 {
+  clip: rect(0 0 0 0);
+  position: absolute;
+  visibility: hidden;
+}
+#switch2 {
+  clip: rect(0 0 0 0);
+  position: absolute;
+  visibility: hidden;
+}
+
+#switch1:checked ~ .switch1 {
+  background: linear-gradient(#f7f6f4, #ffffff);
+  box-shadow: inset 0 -5px 0 #dbd3c8, 0 6px 5px rgba(170, 160, 140, 0.75), 3px 16px 5px rgba(170, 160, 140, 0.3);
+  border-bottom: none;
+}
+
+#switch1:checked ~ .switch1:after {
+  display: none;
+}
+
+#switch2:checked ~ .switch2 {
+  background: linear-gradient(#f7f6f4, #ffffff);
+  box-shadow: inset 0 -5px 0 #dbd3c8, 0 6px 5px rgba(170, 160, 140, 0.75), 3px 16px 5px rgba(170, 160, 140, 0.3);
+  border-bottom: none;
+}
+
+#switch2:checked ~ .switch2:after {
+  display: none;
+}
+  table.center {
+    margin-left:auto; 
+    margin-right:auto;
+  }
+
+</style>
+    
+    <script src="js/prefixfree.min.js"></script>
+
+    <script src="js/modernizr.js"></script>
+
+</head>
+
+<body>
+
+<script> 
+function checkState(checkbox,pinno)
+{
+  
+  if(checkbox.checked)
+  {
+
+      changeState(pinno,0,function(state){
+        if(!state){
+          checkbox.checked=true;
+        }
+        else{
+          checkbox.checked = false;
+        }
+      })
+  }
+  else
+  {
+    console.log("working")
+    changeState(pinno,1,function(state){
+        if(!state){
+          checkbox.checked=true;
+        }
+        else{
+          checkbox.checked = false;
+        }
+      })
+  }
+    
+}
+
+</script>
+<br>
+<br>
+<div id="currentuser">
+<table style="text-align: center;" class="center" id="login">
+<tr><td>Username:</td><td><input type="text" id="username"></td></tr>
+<tr><td>Password:</td><td><input type="password" id="password"></td></tr>
+<tr><td></td><td><input type="button" onclick="verifyPass()" value="submit"></td></tr>
+</table>
+<br>
+<br>
+<script type="text/javascript" src="js/script.js"></script>
+
+</div>
+<table style="width:100%">
+<tr>
+<th>
+
+ <input type="checkbox" name="switch" id="switch1" onclick="checkState(this,11)" checked=true>
+<label class="switch1" for="switch1"><!--<span></span>--></label>
+ 
+</th>
+
+<th>
+ <input type="checkbox" name="switch" id="switch2" onclick="checkState(this,12)" checked=true>
+<label class="switch2" for="switch2"><!--<span></span>--></label>
+ 
+</th>
+<th>
+ <input type="checkbox" name="switch" id="switch3" onclick="checkState(this,13)" checked=true>
+<label class="switch3" for="switch3"><!--<span></span>--></label>
+ 
+</th>
+<th> <input type="checkbox" name="switch" id="switch4" onclick="checkState(this,15)" checked=true>
+<label class="switch4" for="switch4"><!--<span></span>--></label>
+ 
+
+</th>
+</tr>
+</table>
+
+</body>
+</html>
